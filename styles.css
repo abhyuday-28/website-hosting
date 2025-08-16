@@ -862,7 +862,7 @@ footer {
 /* Only visible on mobile */
 @media (max-width: 768px) {
   .mobile-menu-btn {
-    margin-right: 12px;
+    margin-right: 32px;
   }
 }
 
