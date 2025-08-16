@@ -6,6 +6,26 @@ AOS.init({
   offset: 120
 });
 
+const toggleInput = document.getElementById('languageToggle');
+
+toggleInput.addEventListener('change', function() {
+  const hindiElements = document.querySelectorAll('.hindi');
+  const englishElements = document.querySelectorAll('.english');
+
+  hindiElements.forEach(el => {
+    el.style.display = this.checked ? 'none' : 'block';
+  });
+
+  englishElements.forEach(el => {
+    el.style.display = this.checked ? 'block' : 'none';
+  });
+
+  document.documentElement.lang = this.checked ? 'en' : 'hi';
+});
+
+
+
+
 // Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
@@ -92,125 +112,131 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
- class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = 1 + Math.random() * 2;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = 0.1 + Math.random() * 0.4;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+class Particle {
+  constructor() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.size = 1 + Math.random() * 2;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
+    this.opacity = 0.1 + Math.random() * 0.4;
+  }
+  
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
 
-        if (this.x < 0 || this.x > width) this.speedX = -this.speedX;
-        if (this.y < 0 || this.y > height) this.speedY = -this.speedY;
-      }
-      draw() {
-        ctx.beginPath();
-        let brightnessFactor = 1 + (1 - this.y / height) * 1.5;
-        let glowOpacity = this.opacity * brightnessFactor;
-        glowOpacity = Math.min(glowOpacity, 1);
-        ctx.fillStyle = `rgba(224, 185, 115, ${glowOpacity})`;
-        ctx.shadowColor = `rgba(224, 185, 115, ${glowOpacity})`;
-        ctx.shadowBlur = 15 * brightnessFactor;
-        ctx.arc(this.x, this.y, this.size * brightnessFactor, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.closePath();
-      }
-    }
+    if (this.x < 0 || this.x > width) this.speedX = -this.speedX;
+    if (this.y < 0 || this.y > height) this.speedY = -this.speedY;
+  }
+  
+  draw() {
+    ctx.beginPath();
+    let brightnessFactor = 1 + (1 - this.y / height) * 1.5;
+    let glowOpacity = this.opacity * brightnessFactor;
+    glowOpacity = Math.min(glowOpacity, 1);
+    ctx.fillStyle = `rgba(224, 185, 115, ${glowOpacity})`;
+    ctx.shadowColor = `rgba(224, 185, 115, ${glowOpacity})`;
+    ctx.shadowBlur = 15 * brightnessFactor;
+    ctx.arc(this.x, this.y, this.size * brightnessFactor, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
+  }
+}
 
-    const particles = [];
-    for (let i = 0; i < 150; i++) {
-      particles.push(new Particle());
-    }
+const particles = [];
+for (let i = 0; i < 150; i++) {
+  particles.push(new Particle());
+}
 
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animate);
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Gallery Slider Functionality
+const slides = document.querySelectorAll('.gallery-slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let currentSlide = 0;
+
+// Initialize slides
+function initSlides() {
+  slides.forEach((slide, index) => {
+    if (index === 0) {
+      slide.classList.add('current');
+    } else if (index === 1) {
+      slide.classList.add('next');
+    } else if (index === slides.length - 1) {
+      slide.classList.add('prev');
+    } else {
+      slide.classList.remove('prev', 'current', 'next');
     }
-    animate();
-    // Gallery Slider Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const slides = document.querySelectorAll('.gallery-slide');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      let currentSlide = 0;
-      
-      // Initialize slides
-      function initSlides() {
-        slides.forEach((slide, index) => {
-          if (index === 0) {
-            slide.classList.add('current');
-          } else if (index === 1) {
-            slide.classList.add('next');
-          } else if (index === slides.length - 1) {
-            slide.classList.add('prev');
-          } else {
-            slide.classList.remove('prev', 'current', 'next');
-          }
-        });
-      }
-      
-      // Move to next slide
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlides();
-      }
-      
-      // Move to previous slide
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlides();
-      }
-      
-      // Update slide positions
-      function updateSlides() {
-        slides.forEach((slide, index) => {
-          slide.classList.remove('prev', 'current', 'next');
-          
-          const diff = (index - currentSlide + slides.length) % slides.length;
-          
-          if (diff === 0) {
-            slide.classList.add('current');
-          } else if (diff === 1) {
-            slide.classList.add('next');
-          } else if (diff === slides.length - 1) {
-            slide.classList.add('prev');
-          }
-        });
-      }
-      
-      // Event listeners
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-      
-      // Initialize on load
-      initSlides();
-      
-      // Optional: Auto-advance slides
-      // setInterval(nextSlide, 5000);
-    });
-    // Simple quote carousel
-    const quotes = document.querySelectorAll('.quote-carousel');
-    let currentQuote = 0;
+  });
+}
+
+// Move to next slide
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateSlides();
+}
+
+// Move to previous slide
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSlides();
+}
+
+// Update slide positions
+function updateSlides() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove('prev', 'current', 'next');
     
-    function showNextQuote() {
-      quotes.forEach(quote => quote.style.display = 'none');
-      currentQuote = (currentQuote + 1) % quotes.length;
-      quotes[currentQuote].style.display = 'block';
+    const diff = (index - currentSlide + slides.length) % slides.length;
+    
+    if (diff === 0) {
+      slide.classList.add('current');
+    } else if (diff === 1) {
+      slide.classList.add('next');
+    } else if (diff === slides.length - 1) {
+      slide.classList.add('prev');
     }
-    
-    // Initialize - show first quote and hide others
-    quotes.forEach((quote, index) => {
-      quote.style.display = index === 0 ? 'block' : 'none';
-    });
-    
-    // Rotate quotes every 5 seconds
-    setInterval(showNextQuote, 5000);
+  });
+}
+
+// Event listeners for gallery
+if (nextBtn && prevBtn) {
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+  
+  // Initialize on load
+  initSlides();
+  
+  // Optional: Auto-advance slides
+  // setInterval(nextSlide, 5000);
+}
+
+// Simple quote carousel
+const quotes = document.querySelectorAll('.quote-carousel');
+let currentQuote = 0;
+
+function showNextQuote() {
+  quotes.forEach(quote => quote.style.display = 'none');
+  currentQuote = (currentQuote + 1) % quotes.length;
+  quotes[currentQuote].style.display = 'block';
+}
+
+// Initialize - show first quote and hide others
+if (quotes.length > 0) {
+  quotes.forEach((quote, index) => {
+    quote.style.display = index === 0 ? 'block' : 'none';
+  });
+  
+  // Rotate quotes every 5 seconds
+  setInterval(showNextQuote, 5000);
+}
