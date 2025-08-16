@@ -717,11 +717,9 @@ footer {
   .header {
     padding: 1rem;
   }
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;           /* spacing between switch & hamburger */
-    padding-right: 16px; /* keep them away from extreme edge */
+   .nav-actions {
+    gap: 10px;              /* spacing between switch and hamburger */
+    padding-right: 12px;    /* move both a little left from edge */
   }
   .nav-links {
     position: fixed;
@@ -743,9 +741,7 @@ footer {
   }
   
   .mobile-menu-btn {
-    position: relative;
-    display: flex;
-    right: 8px;   /* pull left slightly */
+    display: block;
   }
   
   .hero h1 {
@@ -846,7 +842,7 @@ footer {
 .mobile-menu-btn .bar {
   height: 3px;
   width: 100%;
-  background-color: #fff;
+  background-color: #333;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
@@ -862,5 +858,10 @@ footer {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
+/* Only visible on mobile */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    margin-right: 32px;
+  }
+}
 
