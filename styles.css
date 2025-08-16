@@ -720,7 +720,8 @@ footer {
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 12px;           /* spacing between switch & hamburger */
+    padding-right: 16px; /* keep them away from extreme edge */
   }
   .nav-links {
     position: fixed;
@@ -742,7 +743,8 @@ footer {
   }
   
   .mobile-menu-btn {
-    display: block;
+    position: relative;
+    right: 8px;   /* pull left slightly */
   }
   
   .hero h1 {
@@ -843,7 +845,7 @@ footer {
 .mobile-menu-btn .bar {
   height: 3px;
   width: 100%;
-  background-color: #333;
+  background-color: #fff;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
@@ -859,12 +861,5 @@ footer {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Only visible on mobile */
-@media (max-width: 768px) {
-  .mobile-menu-btn {
-    position: relative;
-    right: 12px;   /* pull left by 12px */
-  }
-}
 
 
