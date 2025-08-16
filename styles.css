@@ -744,6 +744,7 @@ footer {
   
   .mobile-menu-btn {
     position: relative;
+    display: flex;
     right: 8px;   /* pull left slightly */
   }
   
