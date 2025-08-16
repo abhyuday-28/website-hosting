@@ -717,9 +717,10 @@ footer {
   .header {
     padding: 1rem;
   }
-   .nav-actions {
-    gap: 10px;              /* spacing between switch and hamburger */
-    padding-right: 12px;    /* move both a little left from edge */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .nav-links {
     position: fixed;
@@ -861,7 +862,9 @@ footer {
 /* Only visible on mobile */
 @media (max-width: 768px) {
   .mobile-menu-btn {
-    margin-right: 32px;
+    position: relative;
+    right: 12px;   /* pull left by 12px */
   }
 }
+
 
