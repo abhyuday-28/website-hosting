@@ -620,19 +620,18 @@ ul li a:hover {
 /* Contact Section */
 .contact-info {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ exactly 3 equal columns */
-  gap: 2rem;
-  justify-items: stretch;
-  align-items: stretch;
+  grid-template-columns: repeat(3, 1fr); /* always 3 columns on desktop */
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.8rem;
   background: rgba(255, 255, 255, 0.08);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
   transition: var(--transition);
 }
 
@@ -644,6 +643,19 @@ ul li a:hover {
 .contact-icon {
   font-size: 1.5rem;
   color: var(--primary-color);
+}
+
+/* ✅ Mobile & Tablet */
+@media (max-width: 900px) {
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-info {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
 }
 
 /* Footer */
