@@ -718,6 +718,7 @@ footer {
     padding: 1rem;
   }
   .nav-actions {
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -807,6 +808,17 @@ footer {
 .slider .label {
   z-index: 1;
   pointer-events: none;
+}
+/* Place Hindi on the left */
+.slider .label.hindi {
+  position: absolute;
+  left: 10px;
+}
+
+/* Place English on the right */
+.slider .label.english {
+  position: absolute;
+  right: 10px;
 }
 
 /* Knob */
