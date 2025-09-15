@@ -217,6 +217,68 @@ if (nextBtn && prevBtn) {
   // Optional: Auto-advance slides
   // setInterval(nextSlide, 5000);
 }
+// ==========================
+// Books Slider Functionality
+// ==========================
+const bookSlides = document.querySelectorAll('.book-slide');
+const prevBookBtn = document.querySelector('.prev-book');
+const nextBookBtn = document.querySelector('.next-book');
+let currentBook = 0;
+
+// Initialize book slides
+function initBookSlides() {
+  bookSlides.forEach((slide, index) => {
+    if (index === 0) {
+      slide.classList.add('current');
+    } else if (index === 1) {
+      slide.classList.add('next');
+    } else if (index === bookSlides.length - 1) {
+      slide.classList.add('prev');
+    } else {
+      slide.classList.remove('prev', 'current', 'next');
+    }
+  });
+}
+
+// Move to next book
+function nextBookSlide() {
+  currentBook = (currentBook + 1) % bookSlides.length;
+  updateBookSlides();
+}
+
+// Move to previous book
+function prevBookSlide() {
+  currentBook = (currentBook - 1 + bookSlides.length) % bookSlides.length;
+  updateBookSlides();
+}
+
+// Update book slide positions
+function updateBookSlides() {
+  bookSlides.forEach((slide, index) => {
+    slide.classList.remove('prev', 'current', 'next');
+    
+    const diff = (index - currentBook + bookSlides.length) % bookSlides.length;
+    
+    if (diff === 0) {
+      slide.classList.add('current');
+    } else if (diff === 1) {
+      slide.classList.add('next');
+    } else if (diff === bookSlides.length - 1) {
+      slide.classList.add('prev');
+    }
+  });
+}
+
+// Event listeners for books
+if (nextBookBtn && prevBookBtn) {
+  nextBookBtn.addEventListener('click', nextBookSlide);
+  prevBookBtn.addEventListener('click', prevBookSlide);
+  
+  initBookSlides();
+  
+  // Optional auto-slide
+  // setInterval(nextBookSlide, 6000);
+}
 
 // Simple quote carousel
 const quotes = document.querySelectorAll('.quote-carousel');
