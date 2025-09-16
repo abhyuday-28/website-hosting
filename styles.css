@@ -999,7 +999,7 @@ footer {
   display: flex;
   align-items: flex-start;
   margin: 0.4rem 0;
-  line-height: 1.6;
+  line-height: 1.3;
 }
 .more-books li::before {
   content: "";
