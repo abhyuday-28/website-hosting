@@ -2,69 +2,66 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
-  <!-- Android Chrome nav bar -->
-  <meta name="theme-color" content="#1a1a1a" />
-
-  <!-- For older Android browsers -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Dr. Aditya Shukla">
-  <meta name="msapplication-navbutton-color" content="#1a1a1a">
-
-  <!-- For iOS Safari -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
+  <meta name="theme-color" content="#10131d" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Dr. Aditya Shukla" />
+  <meta name="msapplication-navbutton-color" content="#10131d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="डॉ आदित्य शुक्ल की आधिकारिक वेबसाइट | Dr. Aditya Shukla's official website" />
-  <title>Dr. Aditya Shukla </title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="डॉ. आदित्य शुक्ल की आधिकारिक वेबसाइट | Dr. Aditya Shukla's official website" />
+  <title>Dr. Aditya Shukla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <canvas id="backgroundCanvas"></canvas>
-  
-  <header class="header">
-    <div class="nav-container">
+  <div class="page-noise"></div>
+  <div class="overlay"></div>
 
-      <!-- Logo -->
-      <a href="#" class="logo">
-        <span class="hindi">डॉ आदित्य शुक्ल</span>
-        <span class="english" style="display:none">Dr. Aditya Shukla</span>
+  <header class="header" id="pageHeader">
+    <div class="nav-container">
+      <a href="#top" class="logo">
+        <span class="logo-mark">AS</span>
+        <span class="logo-copy">
+          <span class="hindi">डॉ. आदित्य शुक्ल</span>
+          <span class="english" style="display:none">Dr. Aditya Shukla</span>
+        </span>
       </a>
 
-      <!-- Navigation (desktop & mobile dropdown) -->
       <nav class="nav-links" id="navbarMenu">
         <a href="#about" class="hindi">परिचय</a>
         <a href="#about" class="english" style="display:none">About</a>
-        
-        <a href="#features" class="hindi">विशेषताएँ</a>
-        <a href="#features" class="english" style="display:none">Accomplishments</a>
-        
+
+        <a href="#features" class="hindi">उपलब्धियां</a>
+        <a href="#features" class="english" style="display:none">Achievements</a>
+
         <a href="#books" class="hindi">प्रकाशन</a>
         <a href="#books" class="english" style="display:none">Publications</a>
-        
+
         <a href="#gallery" class="hindi">गैलरी</a>
         <a href="#gallery" class="english" style="display:none">Gallery</a>
-        
+
         <a href="#thoughts" class="hindi">विचार</a>
         <a href="#thoughts" class="english" style="display:none">Thoughts</a>
-        
+
         <a href="#contact" class="hindi">संपर्क</a>
         <a href="#contact" class="english" style="display:none">Contact</a>
       </nav>
 
-      <!-- ACTIONS: Switch + Hamburger -->
       <div class="nav-actions">
-        <label class="switch">
-          <input type="checkbox" id="languageToggle">
+        <label class="switch" aria-label="Toggle language">
+          <input type="checkbox" id="languageToggle" />
           <span class="slider">
             <span class="label hindi">हि</span>
             <span class="label english">EN</span>
           </span>
         </label>
-        <button class="mobile-menu-btn" id="navbarToggle">
+        <button class="mobile-menu-btn" id="navbarToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navbarMenu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -73,387 +70,435 @@
     </div>
   </header>
 
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="images/hero.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla" />
-      <h1>
-        <span class="highlight hindi">डॉ आदित्य शुक्ल</span>
-        <span class="highlight english" style="display:none">Dr. Aditya Shukla</span>
-      </h1>
-      <p class="tagline hindi">वैज्ञानिक • लेखक • चिंतक • गीतकार</p>
-      <p class="tagline english" style="display:none">Scientist • Writer • Contemplator • Lyricist</p>
-      
-      <div class="social-links">
-        <a href="https://www.youtube.com/@dradityashukla3110" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/share/1BPNVcZMxQ" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://linkedin.com/in/aditya-shukla-312095b4" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:doctor.aditya.shukla@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        
+  <main id="top">
+    <section class="hero">
+      <div class="hero-backdrop hero-backdrop-one"></div>
+      <div class="hero-backdrop hero-backdrop-two"></div>
+      <div class="hero-grid">
+        <div class="hero-copy" data-aos="fade-right">
+          <span class="eyebrow hindi">विज्ञान, साहित्य और अध्यात्म का संगम</span>
+          <span class="eyebrow english" style="display:none">Where science, literature and spirituality meet</span>
+
+          <h1 class="hero-title hindi">डॉ. आदित्य शुक्ल</h1>
+          <h1 class="hero-title english" style="display:none">Dr. Aditya Shukla</h1>
+
+          <p class="hero-summary hindi">
+            वैज्ञानिक, लेखक, वक्ता, चिंतक और गीतकार के रूप में डॉ. आदित्य शुक्ल ज्ञान को प्रेरणा में बदलते हैं।
+          </p>
+          <p class="hero-summary english" style="display:none">
+            Scientist, author, speaker, contemplator and lyricist shaping knowledge into inspiration.
+          </p>
+
+          <div class="hero-tags">
+            <span class="hero-tag hindi">वैज्ञानिक</span>
+            <span class="hero-tag english" style="display:none">Scientist</span>
+            <span class="hero-tag hindi">लेखक</span>
+            <span class="hero-tag english" style="display:none">Author</span>
+            <span class="hero-tag hindi">चिंतक</span>
+            <span class="hero-tag english" style="display:none">Thinker</span>
+            <span class="hero-tag hindi">गीतकार</span>
+            <span class="hero-tag english" style="display:none">Lyricist</span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#about" class="primary-cta hindi">यात्रा जानिए</a>
+            <a href="#about" class="primary-cta english" style="display:none">Explore Journey</a>
+            <a href="#contact" class="secondary-cta hindi">संपर्क करें</a>
+            <a href="#contact" class="secondary-cta english" style="display:none">Get In Touch</a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.youtube.com/@dradityashukla3110" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1BPNVcZMxQ" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com/in/aditya-shukla-312095b4" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:doctor.aditya.shukla@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-aos="fade-left">
+          <div class="hero-portrait-frame">
+            <img src="images/hero.jpg" alt="डॉ. आदित्य शुक्ल | Dr. Aditya Shukla" />
+          </div>
+
+          <div class="hero-floating-card card-primary">
+            <span class="metric">100+</span>
+            <span class="hindi">व्याख्यान और कार्यशालाएं</span>
+            <span class="english" style="display:none">Lectures and workshops</span>
+          </div>
+
+          <div class="hero-floating-card card-secondary">
+            <span class="metric">15+</span>
+            <span class="hindi">अंतरराष्ट्रीय यात्राएं</span>
+            <span class="english" style="display:none">International visits</span>
+          </div>
+        </div>
       </div>
+
+      <button class="scroll-down" id="scrollDown" aria-label="Scroll down">
+        <span class="hindi">आगे बढ़ें</span>
+        <span class="english" style="display:none">Scroll</span>
+        <i class="fas fa-arrow-down"></i>
+      </button>
+    </section>
+
+    <section class="stats-band" data-aos="fade-up">
+      <div class="stat-pill">
+        <strong>500+</strong>
+        <span class="hindi">रामायण व्याख्यान</span>
+        <span class="english" style="display:none">Ramayana talks</span>
+      </div>
+      <div class="stat-pill">
+        <strong>10,000+</strong>
+        <span class="hindi">संस्कार शिविर प्रतिभागी</span>
+        <span class="english" style="display:none">Camp participants</span>
+      </div>
+      <div class="stat-pill">
+        <strong>Multiple</strong>
+        <span class="hindi">पेटेंट और शोधपत्र</span>
+        <span class="english" style="display:none">Patents and research papers</span>
+      </div>
+    </section>
+
+    <div class="main-content">
+      <section class="section-shell" id="about" data-aos="fade-up">
+        <div class="section-heading">
+          <span class="section-kicker hindi">परिचय</span>
+          <span class="section-kicker english" style="display:none">About</span>
+          <h2 class="hindi">एक बहुआयामी प्रेरक व्यक्तित्व</h2>
+          <h2 class="english" style="display:none">A multidimensional and inspiring life</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="content-card narrative-card">
+            <p class="hindi">
+              डॉ. आदित्य शुक्ल एक प्रतिष्ठित वैज्ञानिक, लोकप्रिय लेखक, प्रभावी वक्ता, कवि और सामाजिक प्रेरक हैं। उनके व्यक्तित्व में साहित्य, अध्यात्म और विज्ञान का ऐसा संतुलित समन्वय दिखाई देता है जो उन्हें समाज में परिवर्तनकारी भूमिका देता है।
+            </p>
+            <p class="english" style="display:none">
+              Dr. Aditya Shukla is a distinguished scientist, author, speaker, poet and public inspirer whose work uniquely balances literature, spirituality and science.
+            </p>
+            <p class="hindi">
+              छत्तीसगढ़ के टेमरी-चिचोली ग्राम से निकलकर उन्होंने रसायन शास्त्र में पीएचडी, ऑपरेशन मैनेजमेंट में एमबीए और हिंदी साहित्य में एमए जैसी विविध शैक्षिक उपलब्धियां हासिल कीं। वर्तमान में वे दिल्ली में अनुसंधान एवं विकास नेतृत्व की भूमिका निभा रहे हैं।
+            </p>
+            <p class="english" style="display:none">
+              From Temri-Chicholi in Chhattisgarh to advanced academic and research leadership, his journey combines a Ph.D. in Chemistry, an MBA in Operations Management and an M.A. in Hindi Literature.
+            </p>
+            <p class="hindi">
+              रामायण के प्रसंगों को समकालीन जीवन से जोड़ने की उनकी शैली बच्चों, युवाओं, दंपतियों और समुदायों को प्रेरित करती है। वे प्राचीन ज्ञान को आधुनिक जीवन-प्रबंधन, संवेदना और आचरण से जोड़ते हैं।
+            </p>
+            <p class="english" style="display:none">
+              His contemporary interpretation of the Ramayana has guided children, youth, families and communities by making classical wisdom practical and relevant.
+            </p>
+          </article>
+
+          <aside class="content-card profile-card">
+            <div class="profile-image">
+              <img src="images/aditya.jpg" alt="डॉ. आदित्य शुक्ल" />
+            </div>
+            <div class="profile-lines">
+              <div class="profile-line">
+                <span class="label hindi">भूमिका</span>
+                <span class="label english" style="display:none">Role</span>
+                <strong class="hindi">वैज्ञानिक, लेखक, वक्ता</strong>
+                <strong class="english" style="display:none">Scientist, Author, Speaker</strong>
+              </div>
+              <div class="profile-line">
+                <span class="label hindi">स्थान</span>
+                <span class="label english" style="display:none">Base</span>
+                <strong class="hindi">नई दिल्ली, भारत</strong>
+                <strong class="english" style="display:none">New Delhi, India</strong>
+              </div>
+              <div class="profile-line">
+                <span class="label hindi">मुख्य फोकस</span>
+                <span class="label english" style="display:none">Focus</span>
+                <strong class="hindi">जीवन-प्रबंधन, रामायण, साहित्य, शोध</strong>
+                <strong class="english" style="display:none">Life management, Ramayana, literature, research</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-shell" id="features" data-aos="fade-up">
+        <div class="section-heading">
+          <span class="section-kicker hindi">उपलब्धियां</span>
+          <span class="section-kicker english" style="display:none">Achievements</span>
+          <h2 class="hindi">कार्य, प्रभाव और उपलब्धियों की झलक</h2>
+          <h2 class="english" style="display:none">A snapshot of work, impact and accomplishments</h2>
+        </div>
+
+        <div class="achievement-grid">
+          <article class="feature-tile">
+            <span class="feature-index">01</span>
+            <p class="hindi">100+ विषयों पर व्याख्यान और कार्यशालाओं का अनुभव</p>
+            <p class="english" style="display:none">100+ lectures and workshops across a wide range of topics</p>
+          </article>
+          <article class="feature-tile">
+            <span class="feature-index">02</span>
+            <p class="hindi">बच्चों के लिए संस्कार शाला और युवाओं के लिए जीवन-प्रबंधन कार्यक्रम</p>
+            <p class="english" style="display:none">Sanskar programs for children and life-management guidance for youth</p>
+          </article>
+          <article class="feature-tile">
+            <span class="feature-index">03</span>
+            <p class="hindi">काव्य, शास्त्र और विज्ञान का प्रभावशाली समन्वय</p>
+            <p class="english" style="display:none">A compelling blend of poetry, scriptures and science</p>
+          </article>
+          <article class="feature-tile">
+            <span class="feature-index">04</span>
+            <p class="hindi">अंतरराष्ट्रीय स्तर पर शोधपत्र और पेटेंट</p>
+            <p class="english" style="display:none">Research papers and patents with international reach</p>
+          </article>
+          <article class="feature-tile">
+            <span class="feature-index">05</span>
+            <p class="hindi">15+ देशों की यात्राएं और वैश्विक सम्मेलनों में सहभागिता</p>
+            <p class="english" style="display:none">Visits to 15+ countries for global conferences and exchanges</p>
+          </article>
+          <article class="feature-tile">
+            <span class="feature-index">06</span>
+            <p class="hindi">500+ रामायण व्याख्यान और 10,000+ बच्चों तक पहुंच</p>
+            <p class="english" style="display:none">500+ Ramayana sessions and outreach to 10,000+ children</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell" id="books" data-aos="fade-up">
+        <div class="section-heading">
+          <span class="section-kicker hindi">प्रकाशन</span>
+          <span class="section-kicker english" style="display:none">Publications</span>
+          <h2 class="hindi">रचनात्मक और चिंतनशील लेखन</h2>
+          <h2 class="english" style="display:none">Creative and reflective publications</h2>
+        </div>
+
+        <div class="books-container">
+          <div class="books-slider">
+            <div class="book-slide current">
+              <div class="book-card">
+                <div class="book-cover">
+                  <img src="images/b6.jpg" alt="बीती बात भुलाता चल | Beeti Baat Bhulata Chal" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title hindi">बीती बात भुलाता चल</h3>
+                  <h3 class="book-title english" style="display:none">Beeti Baat Bhulata Chal</h3>
+                  <p class="book-year hindi">2018 • गीत संग्रह</p>
+                  <p class="book-year english" style="display:none">2018 • Poetry collection</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-slide next">
+              <div class="book-card">
+                <div class="book-cover">
+                  <img src="images/b2.jpg" alt="रामप्रिय भरत | Rampriya Bharat" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title hindi">रामप्रिय भरत</h3>
+                  <h3 class="book-title english" style="display:none">Rampriya Bharat</h3>
+                  <p class="book-year hindi">2024 • जीवन प्रबंधन</p>
+                  <p class="book-year english" style="display:none">2024 • Life management</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-slide prev">
+              <div class="book-card">
+                <div class="book-cover">
+                  <img src="images/ram.jpg" alt="मेरे राम | Mere Ram" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title hindi">मेरे राम</h3>
+                  <h3 class="book-title english" style="display:none">Mere Ram</h3>
+                  <p class="book-year hindi">2023 • आध्यात्मिक चिंतन</p>
+                  <p class="book-year english" style="display:none">2023 • Spiritual reflection</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-slide">
+              <div class="book-card">
+                <div class="book-cover">
+                  <img src="images/b3.jpg" alt="यदि मिल जाएं पंख उधार | Yadi Mil Jaye Pankh Udhar" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title hindi">यदि मिल जाएं पंख उधार</h3>
+                  <h3 class="book-title english" style="display:none">Yadi Mil Jaye Pankh Udhar</h3>
+                  <p class="book-year hindi">2006 • कविता संग्रह</p>
+                  <p class="book-year english" style="display:none">2006 • Poetry collection</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-slide">
+              <div class="book-card">
+                <div class="book-cover">
+                  <img src="images/b4.jpg" alt="आओ 'अ' से 'अमन' पढ़ें | Aao A Se Aman Padhein" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title hindi">आओ 'अ' से 'अमन' पढ़ें</h3>
+                  <h3 class="book-title english" style="display:none">Aao A Se Aman Padhein</h3>
+                  <p class="book-year hindi">2016 • वर्णमाला आधारित काव्य</p>
+                  <p class="book-year english" style="display:none">2016 • Abecedarian poem</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-slide">
+              <div class="book-card">
+                <div class="book-cover">
+                  <img src="images/b5.jpg" alt="सफल व्यक्तित्व के हनुमान मंत्र | Safal Vyaktitva Ke Hanuman Mantra" />
+                </div>
+                <div class="book-info">
+                  <h3 class="book-title hindi">सफल व्यक्तित्व के हनुमान मंत्र</h3>
+                  <h3 class="book-title english" style="display:none">Safal Vyaktitva Ke Hanuman Mantra</h3>
+                  <p class="book-year hindi">2022 • जीवन प्रेरणा</p>
+                  <p class="book-year english" style="display:none">2022 • Personal growth</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-slide">
+              <div class="more-books">
+                <h3 class="hindi">अन्य प्रकाशन</h3>
+                <h3 class="english" style="display:none">Other Publications</h3>
+                <ul class="hindi">
+                  <li>भैरव गाथा (भजनों की सीडी) • 2008</li>
+                  <li>अनुपम राम (श्रीराम की सुंदरता पर व्याख्यान सीडी) • 2014</li>
+                  <li>गीत आदित्य (गीतों की सीडी) • 2019</li>
+                </ul>
+                <ul class="english" style="display:none">
+                  <li>Bhairav Gatha (devotional music CD) • 2008</li>
+                  <li>Anupam Ram (lecture CD on the beauty of Shri Ram) • 2014</li>
+                  <li>Geet Aditya (music CD) • 2019</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="books-nav">
+            <button class="books-btn prev-book" aria-label="Previous book"><i class="fas fa-chevron-left"></i></button>
+            <button class="books-btn next-book" aria-label="Next book"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="gallery" data-aos="fade-up">
+        <div class="section-heading">
+          <span class="section-kicker hindi">गैलरी</span>
+          <span class="section-kicker english" style="display:none">Gallery</span>
+          <h2 class="hindi">क्षण, संवाद और यात्राओं की तस्वीरें</h2>
+          <h2 class="english" style="display:none">Moments, interactions and journeys in frames</h2>
+        </div>
+
+        <div class="gallery-container">
+          <div class="gallery-slider">
+            <div class="gallery-slide current"><img src="images/e1.jpg" alt="Gallery image 1" /></div>
+            <div class="gallery-slide next"><img src="images/e2.jpg" alt="Gallery image 2" /></div>
+            <div class="gallery-slide prev"><img src="images/e3.jpg" alt="Gallery image 3" /></div>
+            <div class="gallery-slide"><img src="images/e4.jpg" alt="Gallery image 4" /></div>
+            <div class="gallery-slide"><img src="images/e5.jpg" alt="Gallery image 5" /></div>
+            <div class="gallery-slide"><img src="images/e6.jpg" alt="Gallery image 6" /></div>
+            <div class="gallery-slide"><img src="images/e7.jpg" alt="Gallery image 7" /></div>
+            <div class="gallery-slide"><img src="images/e8.jpg" alt="Gallery image 8" /></div>
+            <div class="gallery-slide"><img src="images/e9.jpg" alt="Gallery image 9" /></div>
+            <div class="gallery-slide"><img src="images/e10.jpg" alt="Gallery image 10" /></div>
+            <div class="gallery-slide"><img src="images/e11.jpg" alt="Gallery image 11" /></div>
+            <div class="gallery-slide"><img src="images/e12.jpg" alt="Gallery image 12" /></div>
+            <div class="gallery-slide"><img src="images/e13.jpg" alt="Gallery image 13" /></div>
+            <div class="gallery-slide"><img src="images/e14.jpg" alt="Gallery image 14" /></div>
+            <div class="gallery-slide"><img src="images/e15.jpg" alt="Gallery image 15" /></div>
+            <div class="gallery-slide"><img src="images/g1.jpg" alt="Gallery image 16" /></div>
+            <div class="gallery-slide"><img src="images/g3.jpg" alt="Gallery image 17" /></div>
+            <div class="gallery-slide"><img src="images/g4.jpg" alt="Gallery image 18" /></div>
+            <div class="gallery-slide"><img src="images/g5.jpg" alt="Gallery image 19" /></div>
+          </div>
+
+          <div class="gallery-nav">
+            <button class="gallery-btn prev-btn" aria-label="Previous gallery image"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-btn next-btn" aria-label="Next gallery image"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="thoughts" data-aos="fade-up">
+        <div class="section-heading">
+          <span class="section-kicker hindi">विचार</span>
+          <span class="section-kicker english" style="display:none">Thoughts</span>
+          <h2 class="hindi">विचार जो दिशा देते हैं</h2>
+          <h2 class="english" style="display:none">Ideas that shape perspective</h2>
+        </div>
+
+        <div class="thoughts-stage">
+          <article class="quote-carousel">
+            <p class="hindi">"रामायण केवल एक ग्रंथ नहीं, जीवन जीने की शैली है।"</p>
+            <p class="english" style="display:none">"Ramayana is not just a scripture, it is a way of life."</p>
+          </article>
+          <article class="quote-carousel">
+            <p class="hindi">"विज्ञान और अध्यात्म का संगम मानवता के श्रेष्ठ विकास का मार्ग है।"</p>
+            <p class="english" style="display:none">"The fusion of science and spirituality is a path to humanity's best growth."</p>
+          </article>
+          <article class="quote-carousel">
+            <p class="hindi">"सफलता स्वयं को समझने और निरंतर सीखते रहने में निहित है।"</p>
+            <p class="english" style="display:none">"Success lies in understanding yourself and continuing to learn."</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell" id="contact" data-aos="fade-up">
+        <div class="section-heading">
+          <span class="section-kicker hindi">संपर्क</span>
+          <span class="section-kicker english" style="display:none">Contact</span>
+          <h2 class="hindi">संवाद के लिए उपलब्ध</h2>
+          <h2 class="english" style="display:none">Open for connection and conversation</h2>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-intro content-card">
+            <p class="hindi">व्याख्यान, साहित्य, सहयोग या संवाद के लिए नीचे दिए गए माध्यमों से संपर्क करें।</p>
+            <p class="english" style="display:none">Reach out for lectures, literary discussions, collaborations or meaningful conversations.</p>
+          </div>
+
+          <div class="contact-info">
+            <a class="contact-item" href="mailto:doctor.aditya.shukla@gmail.com">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h3 class="hindi">ईमेल</h3>
+                <h3 class="english" style="display:none">Email</h3>
+                <p>doctor.aditya.shukla@gmail.com</p>
+              </div>
+            </a>
+
+            <a class="contact-item" href="https://www.facebook.com/share/1BPNVcZMxQ" target="_blank" rel="noreferrer">
+              <div class="contact-icon"><i class="fas fa-globe"></i></div>
+              <div>
+                <h3 class="hindi">प्रोफाइल</h3>
+                <h3 class="english" style="display:none">Profile</h3>
+                <p>Facebook</p>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h3 class="hindi">स्थान</h3>
+                <h3 class="english" style="display:none">Location</h3>
+                <p class="hindi">नई दिल्ली, भारत</p>
+                <p class="english" style="display:none">New Delhi, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    
-    <div class="scroll-down" id="scrollDown">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
-
-  <div class="overlay"></div>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- About Section -->
-    <section class="section" id="about" data-aos="fade-up">
-      <h2 class="hindi">परिचय</h2>
-      <h2 class="english" style="display:none">About</h2>
-      <p class="hindi">डॉ. आदित्य शुक्ल: एक बहुमुखी प्रतिभा</p>
-      <p class="english" style="display:none">Dr. Aditya Shukla: A Versatile Luminary</p>
-      <p class="hindi">डॉ आदित्य शुक्ल एक प्रतिष्ठित वैज्ञानिक, लोकप्रिय लेखक, सुमधुर कवि, प्रभावी वक्ता तथा रामायण के यथार्थवादी चिंतक जैसे विशिष्ट गुणों से युक्त बहुमुखी प्रतिभा सम्पन्न साधक हैं। इनके व्यक्तित्व में साहित्य, आध्यात्मिकता और विज्ञान का अनोखा संगम इन्हें समाज में एक परिवर्तनकारी व्यक्तित्व बनाता है।</p>
-      <p class="english" style="display:none">Dr. Aditya Shukla is a distinguished scientist, author, poet, orator, and social worker whose multifaceted contributions inspire globally. His unique blend of literature, spirituality, and science establishes him as a transformative figure in society.</p>
-      <p class="hindi">छत्तीसगढ़ के टेमरी-चिचोली गाँव में श्रीमती उषा देवी और डॉ. रामस्वरूप शुक्ल के पुत्र के रूप में जन्मे, डॉ. शुक्ल ने रसायन शास्त्र में पी.एच.डी., ऑपरेशन मैनेजमेंट में एम.बी.ए., और हिंदी साहित्य में एम.ए. की डिग्री प्राप्त की है। वर्तमान में वे दिल्ली में वी-चैरिश लैब्स में अनुसंधान एवं विकास निदेशक के रूप में कार्यरत हैं।</p>
-      <p class="english" style="display:none">Born in Temri-Chicholi, Chhattisgarh, to Smt. Usha Devi and Dr. Ramswaroop Shukla, Dr. Shukla excels academically with a Ph.D. in Chemistry, an MBA in Operations Management, and an M.A. in Hindi Literature. He currently leads as Director of Research and Development at V-Cherish Labs in Delhi.</p>
-      <p class="hindi">डॉ. शुक्ल रामायण के विभिन्न प्रसंगों एवं पात्रों को वर्तमान परिपेक्ष्य में समझने तथा उनसे सीखने के लिए नए दृष्टिकोण प्रदान करने की विशेष योग्यता के कारण देश-विदेश में जाने जाते हैं। 100 से अधिक व्याख्यानों और कार्यशालाओं के माध्यम से, वे बच्चों, युवाओं, दम्पतियों, कवियों और समुदायों को श्रीराम, भरत और हनुमान के आदर्शों से प्रेरित करते हैं। उनकी सरल शैली प्राचीन ज्ञान को आज की पीढ़ी के लिए प्रासंगिक बनाती है।</p>
-      <p class="english" style="display:none">Dr. Shukla’s ability to interpret the Ramayana in a contemporary context sets him apart. Through over 100 lectures and workshops, he imparts life lessons to children, youth, couples, poets, and communities, drawing from the ideals of Lord Rama, Bharat, and Hanuman. His engaging style simplifies ancient wisdom, making it relevant and accessible for today’s generation.</p>
-      <p class="hindi">लेखक के रूप में, उनकी काव्य संग्रह 'यदि मिल जाएं पंख उधार', 'आओ ‘अ’ से ‘अमन’ पढ़ें', और 'बीती बात भूलाता चल' भावनात्मक गहराई से प्रभावित करते हैं। उनकी जीवन प्रबंधन पुस्तकें, जैसे 'सफल व्यक्तित्व के हनुमान मंत्र', 'मेरे राम', और 'रामप्रिय भरत', तार्किक और आध्यात्मिक दृष्टिकोण से व्यक्तिगत विकास को प्रेरित करती हैं।</p>
-      <p class="english" style="display:none">As an author, Dr. Shukla’s poetry collections, including Yadi Mil Jaayein Pankh Udhaar, Aao ‘A’ se ‘Aman’ Padhein, and Beeti Baat Bhoolata Chal, captivate with emotional depth. His life-management books, such as Safal Vyaktitva ke Hanuman Mantra, Mere Ram, and Rampriya Bharat, offer logical and spiritual insights for personal growth.</p>
-      <p class="hindi">विज्ञान के क्षेत्र में, डॉ. शुक्ल के पास अनेक पेटेंट और अंतरराष्ट्रीय पत्रिकाओं में प्रकाशित शोध पत्र हैं। उन्होंने अमेरिका, जर्मनी, जापान, फ्रांस, ब्रिटेन, स्वीडन, कनाडा, सिंगापुर, मलेशिया, कोरिया, दुबई, थाइलैंड, नेपाल आदि देशों में सम्मेलनों में भाग लिया है।</p>
-      <p class="english" style="display:none">In science, Dr. Shukla holds numerous patents and has published extensively in international journals. He has participated in global conferences across the United States, Germany, Japan, and beyond, showcasing his intellectual versatility.</p>
-      <p class="hindi">डॉ. शुक्ल व्यावसायिक उत्कृष्टता और व्यक्तिगत अभिरुचि के सामंजस्य का प्रतीक हैं। उनका कार्य विज्ञान, साहित्य और आध्यात्मिकता के क्षेत्र में उनका कार्य समाज को बौद्धिक और आध्यात्मिक उन्नति की ओर प्रेरित करता है</p>
-      <p class="english" style="display:none">Dr. Shukla exemplifies harmony between professional excellence and personal passion. His work bridges science, literature, and spirituality, inspiring meaningful lives rooted in wisdom and service. As a role model, he demonstrates how diverse pursuits can converge to uplift society, leaving a lasting legacy of intellectual and spiritual fulfillment.</p>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section" id="features" data-aos="fade-up">
-      <h2 class="hindi">प्रमुख विशेषताएँ</h2>
-      <h2 class="english" style="display:none">Accomplishments</h2>
-      <ul class="hindi">
-        <li>100+ विषयों पर व्याख्यान एवं कार्यशालाओं का अनुभव</li>
-        <li>बच्चों के लिए संस्कार शाला, युवाओं के लिए जीवन प्रबंधन</li>
-        <li>काव्य, शास्त्र और विज्ञान का अद्भुत समन्वय</li>
-        <li>अंतरराष्ट्रीय स्तर पर शोधपत्र एवं पेटेंट</li>
-        <li>15+ देशों की यात्राएं वैज्ञानिक और साहित्यिक अधिवेशनों हेतु</li>
-        <li>रामायण पर 500+ व्याख्यान एवं कार्यशालाएं</li>
-        <li>संस्कार शिविरों के माध्यम से 10,000+ बच्चों तक पहुँच</li>
-      </ul>
-      <ul class="english" style="display:none">
-        <li>Experience of 100+ lectures and workshops</li>
-        <li>Sanskar Shala for kids, Life Management for youth</li>
-        <li>Perfect blend of poetry, scriptures and science</li>
-        <li>Research papers and patents at international level</li>
-        <li>Visited 15+ countries for conferences</li>
-        <li>500+ lectures/workshops on Ramayana</li>
-        <li>Reached 10,000+ children through Sanskar camps</li>
-      </ul>
-    </section>
-
-    <!-- Books Section -->
-    <section class="section" id="books" data-aos="fade-up">
-      <h2 class="hindi">प्रकाशन</h2>
-      <h2 class="english" style="display:none">Publications</h2>
-
-      <div class="books-container">
-        <div class="books-slider">
-          <!-- Book 1 -->
-          <div class="book-slide current">
-            <div class="book-card">
-              <div class="book-cover">
-                <img src="images/b6.jpg" alt="बीती बात भुलाता चल | Beeti Baat Bhulata Chal">
-              </div>
-              <div class="book-info">
-                <h3 class="book-title hindi">बीती बात भुलाता चल</h3>
-                <h3 class="book-title english" style="display:none">Beeti Baat Bhulata Chal</h3>
-                <p class="book-year hindi">2018 • गीत संग्रह</p>
-                <p class="book-year english" style="display:none">2018 • Geet Sangrah</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Book 2 -->
-          <div class="book-slide next">
-            <div class="book-card">
-              <div class="book-cover">
-                <img src="images/b2.jpg" alt="रामप्रिय भरत | Rampriya Bharat">
-              </div>
-              <div class="book-info">
-                <h3 class="book-title hindi">रामप्रिय भरत</h3>
-                <h3 class="book-title english" style="display:none">RamPriya Bharat</h3>
-                <p class="book-year hindi">2024 • जीवन प्रबंधन</p>
-                <p class="book-year english" style="display:none">2024 • Jeevan Prabandhan</p>
-                <!-- <p class="book-subtitle hindi">सेवा, संकल्प एवं समर्पण की प्रतिमूर्ति</p>
-                <p class="book-subtitle english" style="display:none">Seva, Sankalp aur Samarpan ki Murti</p> -->
-              </div>
-            </div>
-          </div>
-          <!-- Book 3 -->
-          <div class="book-slide prev">
-            <div class="book-card">
-              <div class="book-cover">
-                <img src="images/ram.jpg" alt="मेरे राम | Mere Ram">
-              </div>
-              <div class="book-info">
-                <h3 class="book-title hindi">मेरे राम</h3>
-                <h3 class="book-title english" style="display:none">Mere Ram</h3>
-                <p class="book-year hindi">2023 • आध्यात्मिक</p>
-                <p class="book-year english" style="display:none">2023 • Adhyatmik</p>
-                <!-- <p class="book-subtitle hindi">नर से नारायण की अनुपम यात्रा</p>
-                <p class="book-subtitle english" style="display:none">Nar se Narayan ki Anokhi Yatra</p> -->
-              </div>
-            </div>
-          </div>
-          
-          <!-- Book 4 -->
-          <div class="book-slide next">
-            <div class="book-card">
-              <div class="book-cover">
-                <img src="images/b3.jpg" alt="यदि मिल जाये पंख उधार | yadi mil jaye pankh udhar">
-              </div>
-              <div class="book-info">
-                <h3 class="book-title hindi">यदि मिल जाये पंख उधार</h3>
-                <h3 class="book-title english" style="display:none">yadi mil jaye pankh udhar</h3>
-                <p class="book-year hindi"> 2006• कविता संग्रह</p>
-                <p class="book-year english" style="display:none"> 2006• poetry collection</p>
-              </div>
-            </div>
-          </div>
-          <!-- Book 5 -->
-          <div class="book-slide next">
-            <div class="book-card">
-              <div class="book-cover">
-                <img src="images/b4.jpg" alt="आओ 'अ' से अमन पढ़ें | Aao 'A' se Aman Padhein ">
-              </div>
-              <div class="book-info">
-                <h3 class="book-title hindi">आओ 'अ' से अमन पढ़ें</h3>
-                <h3 class="book-title english" style="display:none">Aao 'A' se Aman Padhein </h3>
-                <p class="book-year hindi"> 2016• वर्णमाला पर आधारित काव्य</p>
-                <p class="book-year english" style="display:none"> 2016• Abecedarian poem</p>
-              </div>
-            </div>
-          </div>
-          <!-- Book 6 -->
-          <div class="book-slide next">
-            <div class="book-card">
-              <div class="book-cover">
-                <img src="images/b5.jpg" alt="सफल व्यक्तित्व के हनुमान मंत्र  | Safal Vyaktitva ke Hanuman Mantra ">
-              </div>
-              <div class="book-info">
-                <h3 class="book-title hindi">सफल व्यक्तित्व के हनुमान मंत्र (2022)</h3>
-                <h3 class="book-title english" style="display:none">Safal Vyaktitva ke Hanuman Mantra (2022)</h3>
-                <p class="book-year hindi"> 2016• वर्णमाला पर आधारित काव्य</p>
-                <p class="book-year english" style="display:none"> 2016• Abecedarian poem</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- More Books -->
-          <div class="book-slide">
-            <div class="more-books">
-              <h3 class="hindi">अन्य प्रकाशन</h3>
-              <h3 class="english" style="display:none">Other Publications</h3>
-              <ul class="hindi">
-                <li>भैरव गाथा (भजनों की सीडी) 2008</li>
-                <li>अनुपम राम (श्रीराम की सुंदरता - व्याख्यान सीडी) 2014</li>
-                <li>गीत आदित्य (गीतों की सीडी) 2019</li>
-              </ul>
-              <ul class="english" style="display:none">
-                <li>Bhairav Gatha (Bhajnon ki CD) 2008</li>
-                <li>Anupam Ram (Shriram ki Sundarta - CD) 2014</li>
-                <li>Geet Aditya (Geeton ki CD) 2019</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="books-nav">
-          <button class="books-btn prev-book"><i class="fas fa-chevron-left"></i></button>
-          <button class="books-btn next-book"><i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-    </section>
-
-
-     <!-- Gallery Section -->
-  <section class="section" id="gallery" data-aos="fade-up">
-    <h2 class="hindi">गैलरी</h2>
-    <h2 class="english" style="display:none">Gallery</h2>
-    <div class="gallery-container">
-      <!-- Slide 1 -->
-      <div class="gallery-slide">
-        <img src="images/e1.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="gallery-slide">
-        <img src="images/e2.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="gallery-slide">
-        <img src="images/e3.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="gallery-slide">
-        <img src="images/e4.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="gallery-slide">
-        <img src="images/e5.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 6 -->
-      <div class="gallery-slide">
-        <img src="images/e6.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 7 -->
-      <div class="gallery-slide">
-        <img src="images/e7.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 8 -->
-      <div class="gallery-slide">
-        <img src="images/e8.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 9 -->
-      <div class="gallery-slide">
-        <img src="images/e9.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 10 -->
-      <div class="gallery-slide">
-        <img src="images/e10.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 11 -->
-      <div class="gallery-slide">
-        <img src="images/e11.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 12 -->
-      <div class="gallery-slide">
-        <img src="images/e12.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 13 -->
-      <div class="gallery-slide">
-        <img src="images/e13.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 14 -->
-      <div class="gallery-slide">
-        <img src="images/e14.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <!-- Slide 15 -->
-      <div class="gallery-slide">
-        <img src="images/e15.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-      </div>
-
-      <div class="gallery-slider">
-        <!-- Slide 17 -->
-        <div class="gallery-slide">
-          <img src="images/g1.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-        </div>
-        <!-- Slide 18 -->
-        <!-- <div class="gallery-slide">
-          <img src="images/g2.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-        </div> -->
-        <!-- Slide 19 -->
-        <div class="gallery-slide">
-          <img src="images/g3.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-        </div>
-        <!-- Slide 20 -->
-        <div class="gallery-slide">
-          <img src="images/g4.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-        </div>
-        <!-- Slide 21 -->
-        <div class="gallery-slide">
-          <img src="images/g5.jpg" alt="डॉ आदित्य शुक्ल | Dr. Aditya Shukla">
-        </div>
-      </div>
-      <div class="gallery-nav">
-        <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-        <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
-  <!-- Thoughts Section -->
-    <section class="section" id="thoughts" data-aos="fade-up">
-      <h2 class="hindi">विचार</h2>
-      <h2 class="english" style="display:none">Thoughts</h2>
-      <div class="quote-carousel">
-        <p class="hindi">"रामायण केवल एक ग्रंथ नहीं, जीवन जीने की शैली है।"</p>
-        <p class="english" style="display:none">"Ramayana is not just a scripture, it is a way of life."</p>
-      </div>
-      <div class="quote-carousel">
-        <p class="hindi">"विज्ञान और आध्यात्म का संगम ही मानवता का सर्वोत्तम विकास है।"</p>
-        <p class="english" style="display:none">"The fusion of science and spirituality represents one of the greatest advancements for humanity."</p>
-      </div>
-      <div class="quote-carousel">
-        <p class="hindi">"सफलता का रहस्य स्वयं को समझने और निरंतर सीखने की प्रक्रिया में निहित है।"</p>
-        <p class="english" style="display:none">"The secret to success lies in knowing yourself and embracing the process of learning."</p>
-      </div>
-    </section>
-    <!-- Contact Section -->
-    <section class="section" id="contact" data-aos="fade-up">
-      <h2 class="hindi">संपर्क जानकारी</h2>
-      <h2 class="english" style="display:none">Contact Info</h2>
-      <p class="hindi">डॉ आदित्य शुक्ल से संपर्क करने के लिए नीचे दिए गए माध्यमों का उपयोग करें:</p>
-      <p class="english" style="display:none">Contact Dr. Aditya Shukla through following mediums:</p>
-      
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <h3 class="hindi">ईमेल</h3>
-            <h3 class="english" style="display:none">Email</h3>
-            <a href="mailto:doctor.aditya.shukla@gmail.com">doctor.aditya.shukla@gmail.com</a>
-          </div>
-        </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-globe"></i>
-          </div>
-          <div>
-            <h3 class="hindi">प्रोफ़ाइल</h3>
-            <h3 class="english" style="display:none">Profile</h3>
-            <a href="https://www.facebook.com/share/1BPNVcZMxQ" target="_blank">Facebook</a>
-          </div>
-        </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <h3 class="hindi">स्थान</h3>
-            <h3 class="english" style="display:none">Location</h3>
-            <p class="hindi">नई दिल्ली, भारत</p>
-            <p class="english" style="display:none">New Delhi, Bharat</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
     <div class="footer-content">
-      <p class="hindi">निर्मित: अभ्युदय शुक्ल • डॉ आदित्य शुक्ल को समर्पित © 2025</p>
-      <p class="english" style="display:none">Developed by: Abhyuday Shukla • Dedicated to Dr. Aditya Shukla © 2025</p>
+      <p class="hindi">निर्मित: अभ्युदय शुक्ल • डॉ. आदित्य शुक्ल को समर्पित © 2025</p>
+      <p class="english" style="display:none">Developed by Abhyuday Shukla • Dedicated to Dr. Aditya Shukla © 2025</p>
     </div>
   </footer>
-  
-  <!-- Back to Top Button -->
-  <div class="back-to-top" id="backToTop">
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
-  </div>
+  </button>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
