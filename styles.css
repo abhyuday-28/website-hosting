@@ -161,6 +161,7 @@ canvas#backgroundCanvas {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .switch {
@@ -1097,9 +1098,16 @@ footer {
 
 @media (max-width: 640px) {
   .nav-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 10px;
     padding: 10px 12px;
     border-radius: 22px;
+  }
+
+  .logo {
+    min-width: 0;
+    gap: 12px;
   }
 
   .logo-mark {
@@ -1110,9 +1118,48 @@ footer {
 
   .logo-copy {
     display: flex;
-    max-width: 120px;
-    font-size: 0.8rem;
+    max-width: 98px;
+    font-size: 0.74rem;
     line-height: 1.15;
+    overflow: hidden;
+  }
+
+  .logo-copy span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+    gap: 8px;
+    justify-self: end;
+    align-items: center;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .switch {
+    width: 62px;
+    height: 36px;
+  }
+
+  .slider {
+    padding: 0 10px;
+  }
+
+  .slider::before {
+    width: 26px;
+    height: 26px;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(26px);
   }
 
   .hero-title {
