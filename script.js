@@ -97,6 +97,12 @@ function updateActiveNav() {
   });
 }
 
+function refreshViewportUIState() {
+  updateHeaderState();
+  updateBackToTop();
+  updateActiveNav();
+}
+
 function scrollToTarget(targetSelector) {
   const target = document.querySelector(targetSelector);
   if (!target) return;
@@ -211,13 +217,24 @@ window.addEventListener('scroll', () => {
 });
 
 window.addEventListener('resize', () => {
-  updateActiveNav();
+  refreshViewportUIState();
   resizeCanvas();
 });
 
-updateHeaderState();
-updateBackToTop();
-updateActiveNav();
+window.addEventListener('load', () => {
+  window.scrollTo({ left: 0, top: window.scrollY, behavior: 'auto' });
+  refreshViewportUIState();
+  window.setTimeout(refreshViewportUIState, 120);
+  window.setTimeout(refreshViewportUIState, 360);
+});
+
+window.addEventListener('pageshow', () => {
+  window.scrollTo({ left: 0, top: window.scrollY, behavior: 'auto' });
+  refreshViewportUIState();
+  window.setTimeout(refreshViewportUIState, 120);
+});
+
+refreshViewportUIState();
 
 function createLoopSlider({ selector, prevSelector, nextSelector, autoAdvanceMs = 0 }) {
   const slides = Array.from(document.querySelectorAll(selector));

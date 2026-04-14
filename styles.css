@@ -1097,17 +1097,42 @@ footer {
 }
 
 @media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .header {
+    top: 12px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    transform: none !important;
+  }
+
+  .header.scrolled {
+    transform: none !important;
+  }
+
   .nav-container {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    position: relative;
+    display: block;
     gap: 10px;
     padding: 10px 12px;
     border-radius: 22px;
+    min-height: 62px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .logo {
     min-width: 0;
     gap: 12px;
+    padding-right: 124px;
   }
 
   .logo-mark {
@@ -1131,9 +1156,12 @@ footer {
   }
 
   .nav-actions {
-    margin-left: auto;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    margin-left: 0;
     gap: 8px;
-    justify-self: end;
     align-items: center;
   }
 
