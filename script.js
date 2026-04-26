@@ -35,11 +35,11 @@ function stopAutoScroll() {
 }
 
 function setLanguage(isEnglish) {
-  document.querySelectorAll('.hindi').forEach((el) => {
+  document.querySelectorAll('.hindi:not(.switch-label)').forEach((el) => {
     el.style.display = isEnglish ? 'none' : '';
   });
 
-  document.querySelectorAll('.english').forEach((el) => {
+  document.querySelectorAll('.english:not(.switch-label)').forEach((el) => {
     el.style.display = isEnglish ? '' : 'none';
   });
 
