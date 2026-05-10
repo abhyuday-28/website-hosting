@@ -16,17 +16,11 @@ const scrollDownBtn = document.getElementById('scrollDown');
 const sections = document.querySelectorAll('.section-shell');
 const navAnchors = document.querySelectorAll('.nav-links a');
 const scrollTargets = Array.from(document.querySelectorAll('.hero, .stats-band, .section-shell, footer'));
-let autoScrollTimer = null;
 let autoScrollFrame = null;
 let isAutoScrolling = false;
 
 function stopAutoScroll() {
   isAutoScrolling = false;
-
-  if (autoScrollTimer) {
-    clearInterval(autoScrollTimer);
-    autoScrollTimer = null;
-  }
 
   if (autoScrollFrame) {
     cancelAnimationFrame(autoScrollFrame);
@@ -113,39 +107,21 @@ function scrollToTarget(targetSelector) {
 }
 
 function scrollToNextSection() {
-  if (isAutoScrolling || autoScrollTimer || autoScrollFrame) {
+  if (isAutoScrolling || autoScrollFrame) {
     stopAutoScroll();
     return;
   }
 
   isAutoScrolling = true;
-
-  const isMobile = window.innerWidth <= 640;
-
-  if (isMobile) {
-    autoScrollTimer = window.setInterval(() => {
-      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-
-      if (atBottom) {
-        stopAutoScroll();
-        return;
-      }
-
-      window.scrollBy({
-        top: 10,
-        behavior: 'auto'
-      });
-    }, 16);
-
-    return;
-  }
-
+  const scrollElement = document.scrollingElement || document.documentElement;
   let lastTimestamp = null;
-  const pixelsPerSecond = 760;
+  const pixelsPerSecond = window.innerWidth <= 640 ? 460 : 680;
+
+  // A tiny initial nudge prevents some browsers from hesitating at the very top.
+  window.scrollBy(0, 1);
 
   const step = (timestamp) => {
     if (!isAutoScrolling) {
-      stopAutoScroll();
       return;
     }
 
@@ -153,20 +129,19 @@ function scrollToNextSection() {
       lastTimestamp = timestamp;
     }
 
-    const delta = timestamp - lastTimestamp;
+    const delta = Math.min(timestamp - lastTimestamp, 32);
     lastTimestamp = timestamp;
 
-    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    const maxScroll = scrollElement.scrollHeight - window.innerHeight;
+    const atBottom = scrollElement.scrollTop >= maxScroll - 2;
+
     if (atBottom) {
       stopAutoScroll();
       return;
     }
 
     const distance = (pixelsPerSecond * delta) / 1000;
-    window.scrollTo({
-      top: Math.min(window.scrollY + distance, document.documentElement.scrollHeight - window.innerHeight),
-      behavior: 'auto'
-    });
+    window.scrollBy(0, Math.min(distance, maxScroll - scrollElement.scrollTop));
     autoScrollFrame = requestAnimationFrame(step);
   };
 

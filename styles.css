@@ -251,19 +251,19 @@ canvas#backgroundCanvas {
 
 .hero {
   position: relative;
-  padding: 140px 20px 48px;
+  padding: 132px 16px 18px;
 }
 
 .hero-grid {
   position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
-  min-height: calc(100vh - 188px);
+  min-height: auto;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   align-items: center;
-  gap: 44px;
-  padding: 34px;
+  gap: 30px;
+  padding: 24px;
   border-radius: 32px;
   background: linear-gradient(180deg, rgba(15, 23, 39, 0.74), rgba(10, 15, 25, 0.64));
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -304,7 +304,7 @@ canvas#backgroundCanvas {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 7px 13px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -323,25 +323,25 @@ canvas#backgroundCanvas {
 }
 
 .hero-title {
-  font-size: clamp(3.4rem, 8vw, 6.2rem);
-  line-height: 0.96;
-  margin: 18px 0 16px;
-  max-width: 10ch;
+  font-size: clamp(3.2rem, 5.6vw, 5.2rem);
+  line-height: 1;
+  margin: 14px 0 12px;
+  max-width: none;
 }
 
 .hero-summary {
   max-width: 640px;
   font-size: 1.08rem;
-  line-height: 1.9;
+  line-height: 1.7;
   color: var(--muted);
-  margin: 0 0 24px;
+  margin: 0 0 18px;
 }
 
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 30px;
+  gap: 10px;
+  margin-bottom: 22px;
 }
 
 .hero-tag {
@@ -359,7 +359,7 @@ canvas#backgroundCanvas {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .primary-cta,
@@ -415,16 +415,16 @@ canvas#backgroundCanvas {
 
 .hero-visual {
   position: relative;
-  min-height: 580px;
+  min-height: 480px;
   display: grid;
   place-items: center;
 }
 
 .hero-portrait-frame {
-  width: min(100%, 440px);
+  width: min(100%, 400px);
   aspect-ratio: 4 / 5;
-  padding: 18px;
-  border-radius: 38px;
+  padding: 12px;
+  border-radius: 32px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -435,7 +435,7 @@ canvas#backgroundCanvas {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 28px;
+  border-radius: 24px;
 }
 
 .hero-floating-card {
@@ -453,12 +453,12 @@ canvas#backgroundCanvas {
 
 .card-primary {
   left: -10px;
-  bottom: 48px;
+  bottom: 30px;
 }
 
 .card-secondary {
   right: -12px;
-  top: 58px;
+  top: 36px;
 }
 
 .metric {
@@ -471,7 +471,7 @@ canvas#backgroundCanvas {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin: 24px auto 0;
+  margin: 6px auto 0;
   padding: 12px 18px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.09);
@@ -482,7 +482,7 @@ canvas#backgroundCanvas {
 
 .stats-band {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: -8px auto 0;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -507,7 +507,7 @@ canvas#backgroundCanvas {
 }
 
 .main-content {
-  padding: 36px 20px 80px;
+  padding: 24px 20px 80px;
 }
 
 .section-shell {
@@ -521,6 +521,11 @@ canvas#backgroundCanvas {
   scroll-margin-top: 110px;
 }
 
+#about {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .section-heading {
   display: flex;
   flex-direction: column;
@@ -530,9 +535,9 @@ canvas#backgroundCanvas {
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
-  line-height: 0.98;
-  max-width: 14ch;
+  font-size: clamp(2.15rem, 3.7vw, 3.4rem);
+  line-height: 1.05;
+  max-width: none;
 }
 
 .about-grid {
@@ -620,13 +625,13 @@ canvas#backgroundCanvas {
 
 .feature-tile {
   position: relative;
-  padding: 26px;
-  min-height: 210px;
+  padding: 22px;
+  min-height: 145px;
 }
 
 .feature-index {
   display: inline-block;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   color: var(--accent-strong);
   font-size: 0.85rem;
   font-weight: 800;
@@ -645,13 +650,13 @@ canvas#backgroundCanvas {
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: 10px 0 0;
+  padding: 4px 0 0;
 }
 
 .books-slider,
 .gallery-slider {
   position: relative;
-  height: 520px;
+  height: 460px;
   overflow: hidden;
 }
 
@@ -697,25 +702,25 @@ canvas#backgroundCanvas {
 }
 
 .book-cover {
-  height: 72%;
+  height: 68%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-  padding: 18px;
+  padding: 12px;
 }
 
 .book-cover img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 18px;
+  border-radius: 14px;
 }
 
 .book-info {
-  padding: 20px 22px 24px;
+  padding: 14px 18px 18px;
 }
 
 .book-title {
-  margin: 0 0 8px;
-  font-size: 2rem;
+  margin: 0 0 6px;
+  font-size: 1.7rem;
 }
 
 .book-year {
@@ -724,13 +729,13 @@ canvas#backgroundCanvas {
 }
 
 .more-books {
-  padding: 28px;
+  padding: 22px;
   overflow-y: auto;
 }
 
 .more-books h3 {
-  font-size: 2rem;
-  margin: 0 0 18px;
+  font-size: 1.7rem;
+  margin: 0 0 14px;
 }
 
 .more-books ul {
@@ -742,9 +747,9 @@ canvas#backgroundCanvas {
 .more-books li {
   position: relative;
   padding-left: 22px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.55;
 }
 
 .more-books li::before {
@@ -832,6 +837,60 @@ canvas#backgroundCanvas {
   font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1.6;
   color: var(--accent-strong);
+}
+
+.workshop-panel {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(243, 183, 107, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.workshop-date {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  border-radius: 22px;
+  background: rgba(11, 18, 31, 0.78);
+  border: 1px solid rgba(243, 183, 107, 0.18);
+  color: var(--accent-strong);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.workshop-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.workshop-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.workshop-link {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #161616;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 16px 30px rgba(202, 123, 45, 0.22);
 }
 
 .contact-layout {
@@ -959,6 +1018,206 @@ footer {
   }
 }
 
+@media (min-width: 821px) and (max-width: 1280px), (min-width: 821px) and (max-height: 820px) {
+  :root {
+    --max-width: 1080px;
+  }
+
+  .header {
+    top: 12px;
+    width: min(calc(100% - 24px), 1180px);
+  }
+
+  .nav-container {
+    gap: 16px;
+    padding: 10px 16px;
+  }
+
+  .logo {
+    gap: 14px;
+  }
+
+  .logo-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .logo-copy {
+    font-size: 1.08rem;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+  }
+
+  .hero {
+    padding: 118px 14px 14px;
+  }
+
+  .hero-grid {
+    min-height: auto;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+    margin: 14px 0 12px;
+  }
+
+  .hero-summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .hero-tags {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .hero-tag,
+  .primary-cta,
+  .secondary-cta {
+    padding: 10px 14px;
+  }
+
+  .hero-cta {
+    margin-bottom: 16px;
+  }
+
+  .hero-visual {
+    min-height: 410px;
+  }
+
+  .hero-portrait-frame {
+    width: min(100%, 330px);
+    padding: 10px;
+    border-radius: 28px;
+  }
+
+  .hero-portrait-frame img {
+    border-radius: 22px;
+  }
+
+  .hero-floating-card {
+    min-width: 156px;
+    padding: 12px 14px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+  }
+
+  .card-primary {
+    bottom: 24px;
+  }
+
+  .card-secondary {
+    top: 30px;
+  }
+
+  .metric {
+    font-size: 1.45rem;
+  }
+
+  .stats-band {
+    gap: 14px;
+  }
+
+  .stat-pill {
+    padding: 18px 20px;
+  }
+
+  .main-content {
+    padding: 20px 18px 62px;
+  }
+
+  .section-shell {
+    margin-bottom: 22px;
+    padding: 28px;
+    scroll-margin-top: 92px;
+  }
+
+  #about {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .section-heading {
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  }
+
+  .content-card {
+    padding: 22px;
+  }
+
+  .narrative-card p,
+  .contact-intro p {
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .feature-tile {
+    min-height: 130px;
+    padding: 18px;
+  }
+
+  .feature-index {
+    margin-bottom: 12px;
+  }
+
+  .feature-tile p {
+    line-height: 1.65;
+  }
+
+  .books-slider,
+  .gallery-slider {
+    height: 380px;
+  }
+
+  .book-title,
+  .more-books h3 {
+    font-size: 1.45rem;
+  }
+
+  .quote-carousel {
+    min-height: 180px;
+    padding: 28px;
+  }
+
+  .workshop-panel {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .workshop-date {
+    min-height: 130px;
+    font-size: 1.8rem;
+  }
+
+  .workshop-copy p {
+    line-height: 1.7;
+  }
+
+  .thoughts-stage {
+    min-height: 220px;
+  }
+
+  .contact-item {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 820px) {
   .header {
     top: 12px;
@@ -1012,7 +1271,7 @@ footer {
   }
 
   .hero {
-    padding-top: 116px;
+    padding-top: 124px;
   }
 
   .hero-grid {
@@ -1051,7 +1310,7 @@ footer {
 
   .books-slider,
   .gallery-slider {
-    height: 430px;
+    height: 380px;
   }
 
   .book-slide,
@@ -1074,12 +1333,17 @@ footer {
     border-radius: 28px;
   }
 
+  #about {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .section-heading {
     margin-bottom: 22px;
   }
 
   .section-heading h2 {
-    font-size: clamp(2.1rem, 8vw, 3.1rem);
+    font-size: clamp(1.85rem, 7vw, 2.55rem);
   }
 
   .contact-layout,
@@ -1093,6 +1357,19 @@ footer {
   .contact-item h3 {
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+
+  .workshop-panel {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .workshop-date {
+    min-height: 96px;
+  }
+
+  .workshop-link {
+    width: 100%;
   }
 }
 
@@ -1191,7 +1468,7 @@ footer {
   }
 
   .hero-title {
-    font-size: clamp(2.55rem, 14vw, 3.9rem);
+    font-size: clamp(2.2rem, 12vw, 3.15rem);
   }
 
   .hero-copy {
@@ -1306,7 +1583,7 @@ footer {
 
   .books-slider,
   .gallery-slider {
-    height: 360px;
+    height: 320px;
   }
 
   .book-slide,
